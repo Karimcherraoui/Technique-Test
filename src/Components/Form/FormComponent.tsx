@@ -34,15 +34,18 @@ export default function FormComponent() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      email: formData.customer.email,
-      cardNumber: formData.paymentMethod.cardNumber,
-      expirationDate: formData.paymentMethod.expirationDate,
-      cvv: formData.paymentMethod.cvv,
-      name: formData.customer.name,
-      zip: formData.customer.zipCode,
-      country: "",
-    },
+
+    // commented for testing with cypress
+  
+    // defaultValues: {
+    //   email: formData.customer.email,
+    //   cardNumber: formData.paymentMethod.cardNumber,
+    //   expirationDate: formData.paymentMethod.expirationDate,
+    //   cvv: formData.paymentMethod.cvv,
+    //   name: formData.customer.name,
+    //   zip: formData.customer.zipCode,
+    //   country: "",
+    // },
   });
   const getCountryFromAddress = (address: string): string => {
     const parts = address.split(",");
@@ -122,7 +125,7 @@ export default function FormComponent() {
           </button>
         </div>
       </form>
-      {successMessage && <div>{successMessage}</div>}
+
     </div>
   );
 }
